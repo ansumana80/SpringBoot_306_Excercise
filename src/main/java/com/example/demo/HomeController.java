@@ -21,14 +21,18 @@ public class HomeController
         //First let's create an album
         Album album = new Album();
         album.setTitle("The Java Man");
-        album.setArtist("Ansu Rogers");
-        album.setYear(1996);
+        album.setArtist("Jimah Rogers");
+        album.setYear(2020);
 
+        Album album1 = new Album();
+        album1.setTitle("The Python Man");
+        album1.setArtist("Ansu Rogers");
+        album1.setYear(2019);
         // let's create a song
         Song song = new Song();
         song.setTitle("Anyone can learn Java");
         song.setDescription("Non Computer Science guide to get started in Java");
-        song.setYear(2019);
+        song.setYear(2020);
 
         Song song1 = new Song();
         song1.setTitle("Bad, Bad, Java Bad");
@@ -38,12 +42,16 @@ public class HomeController
         // add the song to an empty list
         Set<Song> songs = new HashSet<Song>();
         songs.add(song);
+        songs.add(song1);
+
 
         // add the list of songs to the album's song list
         album.setSongs(songs);
+        album1.setSongs(songs);
 
         //save the album to the database
         albumRepository.save(album);
+        albumRepository.save(album1);
 
         //Grad all the directors from the database and send them to
         //the template
